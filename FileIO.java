@@ -50,19 +50,23 @@ final class FileIO {
 
         // pass the relative path to the input file as a parameter
         File file = new File("./Unit2-02-input.txt");
+
+        // Create a scanner object to read the file
         Scanner scanner = new Scanner(file);
 
         // while there is another line in the file
         while (scanner.hasNextLine()) {
 
-            // set sum to 0
+            // reset sum
             sum = 0;
 
-            // Initialize validInt to 0
+            // Initialize validInt
             int validInt = 0;
 
             // Read the line from the file
             String line = scanner.nextLine();
+
+            // Display the line of numbers
             System.out.println(line);
 
             // Split the line into an array of strings
@@ -79,20 +83,27 @@ final class FileIO {
 
                     // If the integer is valid
                     validInt += 1;
+                // If the string is not an integer
                 } catch (Exception exception) {
-                    // If the string is not an integer
+                    // Display an error message
                     myWriter.write(numStr + " is not an integer. \n");
                 }
             }
 
+            // If there are no integers on the line
             if (validInt == 0) {
+                // Display an error message
                 myWriter.write("Error: no integers were found on this line.\n");
+
+                // Add a new line for spacing
                 myWriter.write("\n");
             } else {
                 // Display the sum of the numbers
                 myWriter.write(
                         "The sum of the valid integers is " + sum + "\n"
                     );
+
+                // Add a new line for spacing
                 myWriter.write("\n");
             }
         }
@@ -100,8 +111,13 @@ final class FileIO {
         // Add the sum to the output string
         outputStr += Integer.toString(sum) + "\n";
 
+        // Write the output string to the file
         myWriter.write(outputStr);
+
+        // Added a blank line for spacing
         System.out.println("");
+
+        // Display that the file was written to successfully
         System.out.println("Successfully wrote to the file.");
 
         // Close the file writer
