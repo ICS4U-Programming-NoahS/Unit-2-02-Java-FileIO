@@ -86,30 +86,26 @@ final class FileIO {
                 // If the string is not an integer
                 } catch (Exception exception) {
                     // Display an error message
-                    myWriter.write(numStr + " is not an integer. \n");
+                    outputStr += (numStr + " is not an integer. \n");
                 }
             }
 
             // If there are no integers on the line
             if (validInt == 0) {
                 // Display an error message
-                myWriter.write("Error: no integers were found on this line.\n");
+                outputStr += "Error: no integers were found on this line.\n";
 
                 // Add a new line for spacing
-                myWriter.write("\n");
+                outputStr += "\n";
             } else {
                 // Display the sum of the numbers
-                myWriter.write(
-                        "The sum of the valid integers is " + sum + "\n"
-                    );
+                outputStr += "The sum of the valid integers is "
+                + Integer.toString(sum) + "\n";
 
                 // Add a new line for spacing
-                myWriter.write("\n");
+                outputStr += "\n";
             }
         }
-
-        // Add the sum to the output string
-        outputStr += Integer.toString(sum) + "\n";
 
         // Write the output string to the file
         myWriter.write(outputStr);

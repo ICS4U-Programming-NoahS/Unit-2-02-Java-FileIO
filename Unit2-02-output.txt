@@ -13,4 +13,3 @@ Error: no integers were found on this line.
 5.8888 is not an integer. 
 Error: no integers were found on this line.
 
-0
